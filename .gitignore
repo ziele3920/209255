@@ -42,3 +42,4 @@ prj/dane.txt
 doc/latex/Makefile
 *.toc
 *.dot
+*.dat
