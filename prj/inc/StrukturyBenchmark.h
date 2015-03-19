@@ -73,7 +73,7 @@ public:
 /*!
  *\brief Destruktor
  */
-	virtual ~StrukturyBenchmark(){delete W;}
+	virtual ~StrukturyBenchmark(){}
 /*!
  *\brief Metoda zwalniajaca zaalokowana przez struktury pamiec
  *

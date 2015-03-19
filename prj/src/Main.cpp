@@ -29,6 +29,11 @@ int main(int argc,char *argv[])
     cout << "Zostanie on wygenerowany przez program" << endl;
     K._Generator("dat3.dat",ILOSC_DANYCH);
      K._Wczytaj("dat3.dat",ILOSC_DANYCH);
+     K._Ustaw(L);
+     K._WykonajTest(atoi(argv[1]));
+     K._Ustaw(S);
+     K._WykonajTest(atoi(argv[1]));
+     K._Ustaw(k);
      K._WykonajTest(atoi(argv[1]));
     }
   else
