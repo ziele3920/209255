@@ -1,15 +1,14 @@
 /*!
    \mainpage 	
    \author Bartłomiej Ankowski
-   \date 09.03.2015
+   \date 19.03.2015
    \version 0.3 \n
 
   
 
 \section Opis Programu
 
- Program jest przykładowym narzędziem do sprawdzania złożoności obliczeniowej i wpływu zwiekszania ilości przetwarzanych danych na czas wykonywania operacji.
-W swojej funkcjonalnosci oferuje odczytywanie i zapisywanie danych przechowywanych w wektorze do pliku zewnetrzego o nazwie podanej przez uzytkownika.
+ 
  
   
 
