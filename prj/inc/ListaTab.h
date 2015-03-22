@@ -21,6 +21,6 @@ public:
 	void _Pokaz();
 	//~ListaTab(){delete [] _L;};
 	void _Zwolnij();
-void _Push2(
+	
 };
 #endif
