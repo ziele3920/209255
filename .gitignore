@@ -44,3 +44,5 @@ doc/latex/Makefile
 *.dot
 *.dat
 *.md5
+*.txt
+*.png

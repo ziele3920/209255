@@ -10,7 +10,8 @@ using namespace std;
 //************************************************************************************************
 void BenchmarkInterfejs:: _WykonajTest(const unsigned int Ilosc_Pow)
 {
-  unsigned int Tablica_Rozmiarow[] = {100,10000,1000000,100000000};
+  double Wynik = 0;
+  unsigned int Tablica_Rozmiarow[] = {10,100,1000,10000,100000,100000};
    for (unsigned int i = 0; i < ( sizeof(Tablica_Rozmiarow)/sizeof(unsigned int)); ++i)
      {
      cout << "Pracuje nad " << Tablica_Rozmiarow[i] << " Danych : " << endl;
@@ -19,10 +20,11 @@ void BenchmarkInterfejs:: _WykonajTest(const unsigned int Ilosc_Pow)
 	 clock_t Start = clock();
 	 this-> _Test(Tablica_Rozmiarow[i]);
 	 clock_t Koniec = clock();
-	 cout <<  (Koniec - Start)/ (double)
-	   (CLOCKS_PER_SEC / 1000) << endl;
-	 this -> _Zwolnij(Tablica_Rozmiarow[i]);
+	  Wynik += ((Koniec - Start)/ (double)
+		   (CLOCKS_PER_SEC / 1000)) ;
+	  this -> _Zwolnij(Tablica_Rozmiarow[i]);
        }
+      cout << Wynik/Ilosc_Pow << endl;
    }
  
 }
