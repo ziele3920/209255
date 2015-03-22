@@ -22,17 +22,6 @@ using namespace std;
 class Kolejka : public Struktury
 {
 private:
-struct Wezel{
-/*!
- *\brief Pole Wezla
- * Pole bedace wskaznikiem na kolejny element listy
- */
-	Wezel *_Nast;
-/*!\brief Pole Wezla
- * Pole przechowuje wartoc typu calkowitego
- */
-	int _Wartosc;
-};
 /*!
  *\brief Pole klasy Kolejka
  *
@@ -70,7 +59,7 @@ public:
  * Metoda ma za zadanie wyswietlic wszsytkie warotsci
  * znajdujace sie w kolejce
  */
-	void _Pokaz();
+	void Pokaz();
 /*!
  *\brief Metoda dodajaca nowy Wezel
  *
@@ -80,14 +69,14 @@ public:
  *\param[in] k - Wartosc ktora zostanie umieszczona w odpowiednim
  * polu Wezla
  */
-	void _Push(int k,unsigned int Pozycja = 0);
+	void Push(int k);
 /*!
  *\brief Metda usuwajaca wezel
  *
  *Metoda ma za zadanie usunac pierwszy dodany element z kolejki
  * oraz ustawic wskaznik przed ostatniego elementu na NULL
  */
-  	int _Pop(unsigned int Pozycja = 0);
+  	void Pop();
 /*!
  *\brief Metoda informujaca o obecnej ilosci Wezlow
  *
@@ -95,8 +84,7 @@ public:
  * znajdujacych sie elementow w kolejce
  *\return - Zwraca ilosc elementow w kolejce 
  */
-  	unsigned int _Rozmiar(){return _Ilosc;}
-	void _Zwolnij();
+  	unsigned int Rozmiar(){return _Ilosc;}
 	
 };
 

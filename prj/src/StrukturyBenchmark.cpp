@@ -7,10 +7,8 @@
 //************************************************************************
 void::StrukturyBenchmark::_Zwolnij(const unsigned int n)
 {
-  //  cout << "Zwalniam ze wskaznika";
-  // for(unsigned int i = 0; i < n; ++i)
-    S -> _Zwolnij();
-     S->_Pokaz();
+  for(unsigned int i = 0; i < n; ++i)
+    S -> Pop();
 }
 //***************************************************************************
 void StrukturyBenchmark::_Przydziel(const unsigned int n)
@@ -23,8 +21,7 @@ void StrukturyBenchmark::_Przydziel(const unsigned int n)
 void StrukturyBenchmark::_Test(const unsigned int n)
 {
   for(unsigned int i = 0; i < n; ++i) 
-    S -> _Push(W[i]);
-  //  S-> _Pokaz();
+    S -> Push(W[i]);
  }
 //*****************************************************************************
 void StrukturyBenchmark:: _Wczytaj(string PlikIn,const unsigned int Ilosc)
