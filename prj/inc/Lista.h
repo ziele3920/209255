@@ -1,9 +1,8 @@
 #ifndef LISTA_H
 #define LISTA_H
 #include <iostream>
-#include <cstdlib>
 #include "Struktury.h"
-using namespace std;
+
 /*!
  *\file Definicja Klasy Lista
  *
@@ -13,6 +12,17 @@ using namespace std;
 class Lista : public Struktury
 {
 private:
+struct Wezel{
+/*!
+ *\brief Pole Wezla
+ * Pole bedace wskaznikiem na kolejny element listy
+ */
+	Wezel *_Nast;
+/*!\brief Pole Wezla
+ * Pole przechowuje wartoc typu calkowitego
+ */
+	int _Wartosc;
+};
 /*!
  *\brief Pole klasy Lista
  *Wskaznik na nowo dodany Wezel
@@ -32,7 +42,7 @@ public:
  *\param[in] wart - Wartosc jaka zostana dodana do Wezla 
  *\param[in] poz - Pozycja w ktorej zosatnie dodany Wezel
  */
-	void Push_Dowolny(int wart, int poz);	
+	void _Push(int wart,unsigned int poz = 1);	
 /*!
  *\brief Metoda usuwajaca Wezel
  * 
@@ -41,27 +51,27 @@ public:
  *
  *\param[in] Pozycja - Numer Wezla ktory zostanie usuniety
  */
-	void Pop_Dowolny(int Pozycja);
+	int _Pop(unsigned int Pozycja = 1);
 /*!
  *\brief Metoda dodajaca wezel
  * 
  * Metoda ma za zadanie dodac element na poczatek listy
  *\param[in] k - Wartosc ktora bedzie zapisana w Wezle 
  */
-	void Push(int k);
+	//void _Push(int k,unsigned int Pozycja=0);
 /*!
  * Metoda usuwajaca Wezel
  *
  *Metoda ma za zadanie usunac pierwszy Wezel listy
  */
-  	void Pop();
+  	//int _Pop(unsigned int Pozycja=0);
 /*!
  *\brief Metoda informujaca o ilosci wezlow
  *
  *Metoda zwraca informajce o ilosci aktualnych wezlow listy
  *\return - Ilosc elementow listy
  */
-  	unsigned int Rozmiar(){return _Ilosc;}
+  	unsigned int _Rozmiar(){return _Ilosc;}
 /*!
  *\brief Konstruktor
  *
@@ -76,14 +86,16 @@ public:
 /*!
  *\brief Konstruktor Kopiujacy
  */
-	Lista(const Lista &A);
+	//Lista(const Lista &A);
 /*!
  *\brief Metoda wyswietlajaca elementy Listy
  *
  * Metoda ma za zadanie wyswietlic wszsytkie warotsci
  * znajdujace sie na Liscie
  */
-	void Pokaz();	
+	void _Pokaz();	
+	void _Zwolnij();
+
 
 };
 #endif

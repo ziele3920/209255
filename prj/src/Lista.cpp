@@ -4,39 +4,76 @@
  *\file
  *\brief Definicje Metod klasy Lista
  */
-//**************************************************************************
-void Lista::Pop_Dowolny(int Pozycja) 
+using namespace std;
+
+void Lista::_Zwolnij()
 {
+  cout << "zwalniam" << endl;
+  Wezel * Temp = Glowa;
+  for(unsigned int i= 1; i < _Ilosc-1; ++i)
+    {
+      Temp = Temp -> _Nast;
+      delete Glowa;
+      Glowa = Temp;
+    }
+  _Ilosc = 0;
+  }
+//*************************************************************************
+int Lista::_Pop(unsigned int Pozycja) 
+{
+ 
   Wezel* Temp = Glowa; 
+  Wezel * Temp2;
   if(Pozycja == 1)
     { 
+     Wezel * T = Glowa -> _Nast;
       delete Glowa; 
-      Glowa = Temp -> _Nast;
+      Glowa = T;
     }
-  else
-    { 
-      for(int i = 1; i < (Pozycja-1); ++i) { Temp = Temp -> _Nast;} 
+ 
+  else 
+    {   
+      // cout << "checkpoint1" << endl;
+      for(unsigned int i = 1; i < (Pozycja-1); ++i){
+	//	cout << "checkpoint1.1" << endl; 
+	Temp = Temp -> _Nast; }
       if(Temp -> _Nast -> _Nast == NULL)
 	{ 
+	  //   cout << "checkpoint2" << endl;
 	  delete Temp -> _Nast; 
 	  Temp -> _Nast = NULL; 
 	}
       else
-	{ //cout << tmp->nastepny->wartint << endl;
-	  delete Temp -> _Nast; //cout << tmp->nastepny->wartint << endl; 
-	  Temp -> _Nast = Temp -> _Nast -> _Nast; 
-	} 
-    } 
+	{ 
+	  //  cout << "checkpoint3" << endl;
+	  Temp2 = Temp ->_Nast;
+	  Temp -> _Nast = Temp2 -> _Nast;
+	  delete Temp2;
+	}
+    }
+
    --_Ilosc;
 }
+/*
+void Lista::_Push(int Wart,unsigned int Poz) 
+{
+  if(Poz <0 || Poz >_Ilosc)
+    {
+      cerr < "Bledna pozycja do usuniecia" << endl;
+    }
+  else if(Glowa == NULL){
+    Wezel * Temp = new Wezel;
+    Temp ->_Wart = Wart;
+*/
 //**************************************************************************
-void Lista::Push_Dowolny(int Wart, int Poz) 
+
+void Lista::_Push(int Wart,unsigned int Poz) 
 { 
   Wezel *Nowy = new Wezel; 
   Wezel *Stary; 
   Wezel *Temp = Glowa; 
   Nowy->_Wartosc = Wart; 
-  int nr = Rozmiar(); 
+  unsigned int nr = _Rozmiar(); 
   if(Poz>(nr)) Poz = nr+1;
   if(!Glowa){ Glowa = Nowy; }
   else
@@ -49,18 +86,18 @@ void Lista::Push_Dowolny(int Wart, int Poz)
 	}
       else
 	{ 
-	  for(int i = 1; i < (Poz-1); ++i) { Temp = Temp->_Nast; } 
+	  for(unsigned int i = 1; i < (Poz-1); ++i) { Temp = Temp->_Nast; } 
 	  Stary = Temp->_Nast; 
 	  Temp->_Nast = Nowy; 
 	  Temp->_Nast->_Nast = Stary; 
 	}
     } 
   ++_Ilosc;
-}
+  }
 //**************************************************************************
 
 //************************************************************************
-void Lista::Pokaz()
+void Lista::_Pokaz()
 {
   Wezel * Temp = Glowa;
   if(_Ilosc == 0) { cout << "Lista pusta!" << endl;}
@@ -75,16 +112,10 @@ void Lista::Pokaz()
     }
 }
 //*************************************************************************
-Lista::Lista(const Lista &A)
-{
-  Wezel *W = A.Glowa;
-  while(W)
-    {
-      Push(W->_Wartosc);
-    }
-}
+
 //*************************************************************************
-void Lista::Push(int a)
+/*
+void Lista::_Push(int a,unsigned int Pozycja)
 {
   Wezel *Temp = new Wezel;
   Temp -> _Nast = Glowa;
@@ -92,8 +123,8 @@ void Lista::Push(int a)
   Glowa = Temp;
   ++_Ilosc;
 }
-//************************************************************************
-void Lista::Pop()
+
+int Lista::_Pop(unsigned int Pozycja)
 {
    Wezel * Temp = Glowa;
     if(Temp)
@@ -104,5 +135,6 @@ void Lista::Pop()
       --_Ilosc;
   
 }
-//**********************************************************************      
+   
 
+*/
