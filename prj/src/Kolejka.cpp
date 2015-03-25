@@ -3,20 +3,9 @@
  *\file 
  *\brief Definicje Metod klasy Kolejka
  */
-void Kolejka::_Zwolnij()
-{
-  // cout << "zwalniam";
-  Wezel * Temp = _Pierwszy;
-  for(unsigned int i= 1; i < _Ilosc-1; ++i)
-    {
-      Temp = Temp -> _Nast;
-      delete _Pierwszy;
-      _Pierwszy = Temp;
-    }
-  _Ilosc = 0;
-  }
+
 //************************************************************************************
-void Kolejka::_Push(int a,unsigned int Pozycja)
+void Kolejka::Push(int a)
 {
   Wezel *Temp = new Wezel;
   if(_Ilosc)
@@ -35,7 +24,7 @@ void Kolejka::_Push(int a,unsigned int Pozycja)
   ++_Ilosc;
 }
 //**********************************************************************************
-int Kolejka::_Pop(unsigned int Pozycja)
+void Kolejka::Pop()
 {
   Wezel * Temp;
   if(_Ilosc == 0) { cout << "Kolejka pusta!" << endl;exit(1);}
@@ -48,7 +37,7 @@ int Kolejka::_Pop(unsigned int Pozycja)
     }
 }
 //*******************************************************************************
-void Kolejka::_Pokaz()
+void Kolejka::Pokaz()
 {
   Wezel *Temp = _Pierwszy;
   if(_Ilosc == 0){ cout << "Kolejka pusta!" << endl;}
@@ -66,6 +55,6 @@ void Kolejka::_Pokaz()
 Kolejka::~Kolejka()
 {
   while(_Pierwszy) 
-    _Pop();
+    Pop();
 }
 //**********************************************************************************

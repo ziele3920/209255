@@ -3,7 +3,6 @@
 
 #include "BenchmarkInterfejs.h"
 #include "Struktury.h"
-
 /*!
  *\file Definicja Klasy StrukturyBenchmark
  *
@@ -24,14 +23,12 @@ private:
  * odpowiednie dla danej strktury metody
  */
 	Struktury *S;
-	
 /*!
  *\brief Pole StrkturyBenchmark
  *Pole zawiera wskaznik na typ calkowity, sluzy on do alokowania pamieci dla wczytanych 
  * z pliku danych
  */
 	int *W;
-	
 public:
 /*!
  *\brief Metoda wykonujaca test dla odpowiedniej struktury
@@ -76,15 +73,13 @@ public:
 /*!
  *\brief Destruktor
  */
-	virtual ~StrukturyBenchmark(){delete []W;}
+	virtual ~StrukturyBenchmark(){}
 /*!
  *\brief Metoda zwalniajaca zaalokowana przez struktury pamiec
  *
- * Metoda ma za zadanie oproznic zaladowane do struktury dane
- *\param[in] n - Ilosc danych ktora zostanie zwolniona
+ * Metoda ma za zadanie oproznic zaladowane do struktury dane,
  */ 
 	void _Zwolnij(const unsigned int n);
-	
 	
 	
 	
