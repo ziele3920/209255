@@ -4,36 +4,40 @@ using namespace std;
  *\file
  *\brief Definicje metod klasy Stos
  */
-
-//**************************************************************************
-Stos::Stos(const Stos &S)
+void Stos::_Zwolnij()
 {
-  Gora = NULL;
-  Wezel * W = S.Gora;
-  while(W)
+  // cout << "zwalniam";
+  Wezel * Temp = Gora;
+  for(unsigned int i= 0; i < _Ilosc; ++i)
     {
-      this ->Push(W ->_Wartosc);
-      W = W->_Nast;
+      // cout << "\ncheck1" << endl;
+      Temp = Temp -> _Nast;
+      delete Gora;
+      Gora = Temp;
     }
-}
+  _Ilosc = 0;
+  }
+//**************************************************************************
+
 //**************************************************************************
 Stos::~Stos()
 {
 while(Gora)
     {
-      Pop();
+      _Pop();
     }
 }
 //******************************************************************************
-void Stos::Push(int k)
+void Stos::_Push(int k,unsigned int Pozycja)
 {
   Wezel *W = new Wezel;
   W ->_Wartosc = k;
   W ->_Nast = Gora;
   Gora = W;
+  ++_Ilosc;
 }
 //******************************************************************************
-void Stos::Pop()
+int Stos::_Pop(unsigned int Pozycja)
 {
   Wezel *W = Gora;
   int Temp;
@@ -44,10 +48,11 @@ void Stos::Pop()
       Temp = W->_Wartosc;
       delete W;
     }
+  --_Ilosc;
 
 }
 //*******************************************************************************
-void Stos::Pokaz()
+void Stos::_Pokaz()
 {
   Wezel *W = Gora;
   if(!Gora) {cout << "Stos jest pusty" << endl;}

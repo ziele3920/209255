@@ -14,57 +14,52 @@
 
 /*!
  *\brief Modeluje pojecie Struktury danych,
- * klasa bazowa dla Stosu,Kolejki i Listy.
+ * klasa bazowa dla Stosu,Kolejki i Listy,zarowno w implemenetacji wskaznikowej 
+ * jak i tablicowej
  */
 class Struktury{
-protected:
-/*!
- * \brief Modeluje pojecie wezla
- * Struktura przeznaczona do dziedziczenia dla klas pochodnych, opartych o 
- * dzialanie listy
- */	
-struct Wezel{
-/*!
- *\brief Pole Wezla
- * Pole bedace wskaznikiem na kolejny element listy
- */
-	Wezel *_Nast;
-/*!\brief Pole Wezla
- * Pole przechowuje wartoc typu calkowitego
- */
-	int _Wartosc;
-};
+
 public:
 /*!
- *\brief Metoda dodajaca kolejny Wezel
+ *\brief Metoda dodajaca kolejny element struktury
  *
- * Metoda ma za zadanie dodac kolejny wezel do naszej struktury 
+ * Metoda ma za zadanie dodac kolejny element do naszej struktury 
  * oraz zapisac w nim odpowiednia wartosc.W zaleznosci od implementowanej struktury
- * element bedzie dodawany na poczatku lub na koncu listy.
+ * element bedzie dodawany na poczatku lub na koncu struktury danych.
  *
- *\param[in] k - wartosc typu calkowitnego, ktora bedzie umieszona w wezle
+ *\param[in] k - wartosc typu calkowitnego, ktora bedzie umieszona w strukturze
  */
-  virtual void Push(int k) = 0;
+  virtual void _Push(int k,unsigned int Pozycja = 1) = 0;
 /*!
- *\brief Metoda usuwajaca Wezel
+ *\brief Metoda usuwajaca element
  *
- * Metoda ma za zadanie usunac wezel i w zaleznosci od implementowanej struktury
- * bedzie to usuwany element z poczatku lub konca listy Wezlow
+ * Metoda ma za zadanie usunac element i w zaleznosci od implementowanej struktury
+ * bedzie to usuwany element usuwany z poczatk,końca lub w przypadku listy z dowolnego jej miejsca
+ *\param[in] Pozycja - Numer elementu ,ktory zostanie dodany. Argument ma znaczenie tylko w przypadku listy
+ * i domyślnie jest ustawiony, tak aby element był dodawany zawsze na poczatku listy
+ *\return
+ * Zwraca wartosc elementu z odpowiedniego dla wybranej struktury miejsca 
  */
-  virtual void Pop() = 0;
+  virtual int _Pop(unsigned int Pozycja = 1 ) = 0;
 /*!
  *\brief Metoda zwracajaca rozmiar Struktury
  *
  * Metoda ma zadanie zwrocic bierzaca liczbe elementow nalezacych do danej struktury
  *\return - Bierzaca liczba elementow Struktury danych
  */ 
-  virtual unsigned int Rozmiar() = 0;
+  virtual unsigned int _Rozmiar() = 0;
 /*!
  *\brief Metoda wyswietlajaca dane 
  *
  * Metoda ma za zadanie wyswietlic wszytskie dane nalezace do struktury 
  */
-  virtual void Pokaz() = 0;
+  virtual void _Pokaz() = 0;
+/*!
+ *\brief Metoda zwalniajaca pamiec
+ *
+ *Metoda ma za zadanie zwolnic pamiec uzywana przy zapelnienianiu danej struktry danymi
+ */
+  virtual void _Zwolnij() = 0;
 
   };
 #endif

@@ -23,6 +23,21 @@ class Kolejka : public Struktury
 {
 private:
 /*!
+ *\Pole Klasy Kolejka
+ *Pole modelje pojecie wezla,bedacego podstawa dla implementacji struktury danych w rozwinieciu wskaznikowym
+ */
+struct Wezel{
+/*!
+ *\brief Pole Wezla
+ * Pole bedace wskaznikiem na kolejny element Kolejki
+ */
+	Wezel *_Nast;
+/*!\brief Pole Wezla
+ * Pole przechowuje wartoc typu calkowitego
+ */
+	int _Wartosc;
+};
+/*!
  *\brief Pole klasy Kolejka
  *
  * Pole jest wskaznikiem na pierwszy element kolejki
@@ -59,7 +74,7 @@ public:
  * Metoda ma za zadanie wyswietlic wszsytkie warotsci
  * znajdujace sie w kolejce
  */
-	void Pokaz();
+	void _Pokaz();
 /*!
  *\brief Metoda dodajaca nowy Wezel
  *
@@ -69,14 +84,14 @@ public:
  *\param[in] k - Wartosc ktora zostanie umieszczona w odpowiednim
  * polu Wezla
  */
-	void Push(int k);
+	void _Push(int k,unsigned int Pozycja = 0);
 /*!
  *\brief Metda usuwajaca wezel
  *
  *Metoda ma za zadanie usunac pierwszy dodany element z kolejki
  * oraz ustawic wskaznik przed ostatniego elementu na NULL
  */
-  	void Pop();
+  	int _Pop(unsigned int Pozycja = 0);
 /*!
  *\brief Metoda informujaca o obecnej ilosci Wezlow
  *
@@ -84,7 +99,15 @@ public:
  * znajdujacych sie elementow w kolejce
  *\return - Zwraca ilosc elementow w kolejce 
  */
-  	unsigned int Rozmiar(){return _Ilosc;}
+  	unsigned int _Rozmiar(){return _Ilosc;}
+/*!
+ *\brief Metoda zwalniajaca pamiec zajeta przez struktre
+ *
+ * Metoda ma za zadanie zwolnij pamiec zajeta przez zaladowane do struktury dane,
+ * elementy sa usuwany dopoki wskaznik pokazujacy na poczatek  
+ * kolejki nie bedzie wskazywal na NULL
+ */ 
+	void _Zwolnij();
 	
 };
 

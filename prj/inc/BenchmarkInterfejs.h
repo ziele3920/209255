@@ -1,6 +1,6 @@
 #ifndef BENCHMARKINTERFEJS_H
 #define BENCHMARKINTERFEJS_H
-#define ILOSC 4
+
 #include <iostream>
 #include <cstdlib>
 #include <fstream>

@@ -7,9 +7,8 @@
 //************************************************************************
 void::StrukturyBenchmark::_Zwolnij(const unsigned int n)
 {
-  for(unsigned int i = 0; i < n; ++i)
-    S -> Pop();
-}
+ S -> _Zwolnij();
+ }
 //***************************************************************************
 void StrukturyBenchmark::_Przydziel(const unsigned int n)
 {
@@ -20,9 +19,10 @@ void StrukturyBenchmark::_Przydziel(const unsigned int n)
 //*****************************************************************************
 void StrukturyBenchmark::_Test(const unsigned int n)
 {
+ 
   for(unsigned int i = 0; i < n; ++i) 
-    S -> Push(W[i]);
- }
+    S -> _Push(W[i]);
+}
 //*****************************************************************************
 void StrukturyBenchmark:: _Wczytaj(string PlikIn,const unsigned int Ilosc)
 {

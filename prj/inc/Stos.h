@@ -19,7 +19,22 @@ using namespace std;
  */
 class Stos : public Struktury
 {
+/*!
+ *\Pole Klasy Stos
+ *Pole modelje pojecie wezla,bedacego podstawa dla implementacji struktury danych w rozwinieciu wskaznikowym
+ */
 private:
+struct Wezel{
+/*!
+ *\brief Pole Wezla
+ * Pole bedace wskaznikiem na kolejny element stosu
+ */
+	Wezel *_Nast;
+/*!\brief Pole Wezla
+ * Pole przechowuje wartoc typu calkowitego
+ */
+	int _Wartosc;
+};
 /*!
  *\brief Pole klasy Stos
  * Pole jest wskaznikiem na ostatnio dodany Wezel
@@ -40,13 +55,16 @@ public:
  *\param[in] k - Wartosc ktora zostanie umieszczona w odpowiednim
  * polu Wezla
  */
-	void Push(int k);
+	void _Push(int k,unsigned int Pozycja = 0);
 /*!
  *\brief Metda usuwajaca wezel
  *
- *Metoda ma za zadanie zdjac ostatnio dodany element ze stosu danych
+ * Metoda ma za zadanie zdjac ostatnio dodany element ze stosu danych oraz zwrocic 
+ * przechowywana wartosc
+ *\return
+ * Zwraca ostatnia dodana wartosc 
  */
-  	void Pop();
+  	int _Pop(unsigned int Pozycja = 0);
 /*!
  *\brief Metoda informujaca o obecnej ilosci Wezlow
  *
@@ -54,7 +72,7 @@ public:
  * znajdujacych sie elementow na stosie
  *\return - Zwraca ilosc elementow na Stosie 
  */
-  	unsigned int Rozmiar(){return _Ilosc;}	
+  	unsigned int _Rozmiar(){return _Ilosc;}	
 /*!
  *\brief Konstruktor
  *
@@ -77,7 +95,15 @@ public:
  * Metoda ma za zadanie wyswietlic wszsytkie warotsci
  * znajdujace sie na Stosie
  */
-	void Pokaz();	
+	void _Pokaz();	
+/*!
+ *\brief Metoda zwalniajaca pamiec zajeta przez struktre
+ *
+ * Metoda ma za zadanie zwolnij pamiec zajeta przez zaladowane do struktury dane,
+ * elementy sa usuwany dopoki wskaznik pokazujacy na poczatek  
+ * kolejki nie bedzie wskazywal na NULL
+ */
+	void _Zwolnij();
 	
 };
 
