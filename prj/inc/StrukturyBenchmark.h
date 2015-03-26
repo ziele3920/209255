@@ -31,6 +31,7 @@ private:
  * z pliku danych
  */
 	int *W;
+	
 public:
 /*!
  *\brief Metoda wykonujaca test dla odpowiedniej struktury
@@ -79,9 +80,11 @@ public:
 /*!
  *\brief Metoda zwalniajaca zaalokowana przez struktury pamiec
  *
- * Metoda ma za zadanie oproznic zaladowane do struktury dane,
+ * Metoda ma za zadanie oproznic zaladowane do struktury dane
+ *\param[in] n - Ilosc danych ktora zostanie zwolniona
  */ 
 	void _Zwolnij(const unsigned int n);
+	
 	
 	
 	

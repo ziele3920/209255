@@ -12,6 +12,10 @@
 class Lista : public Struktury
 {
 private:
+/*!
+ *\Pole Klasy lista
+ *Pole modelje pojecie wezla,bedacego podstawa dla implementacji struktury danych w rozwinieciu wskaznikowym
+ */
 struct Wezel{
 /*!
  *\brief Pole Wezla
@@ -52,19 +56,7 @@ public:
  *\param[in] Pozycja - Numer Wezla ktory zostanie usuniety
  */
 	int _Pop(unsigned int Pozycja = 1);
-/*!
- *\brief Metoda dodajaca wezel
- * 
- * Metoda ma za zadanie dodac element na poczatek listy
- *\param[in] k - Wartosc ktora bedzie zapisana w Wezle 
- */
-	//void _Push(int k,unsigned int Pozycja=0);
-/*!
- * Metoda usuwajaca Wezel
- *
- *Metoda ma za zadanie usunac pierwszy Wezel listy
- */
-  	//int _Pop(unsigned int Pozycja=0);
+
 /*!
  *\brief Metoda informujaca o ilosci wezlow
  *
@@ -94,6 +86,13 @@ public:
  * znajdujace sie na Liscie
  */
 	void _Pokaz();	
+/*!
+ *\brief Metoda zwalniajaca pamiec zajeta przez struktre
+ *
+ * Metoda ma za zadanie zwolnij pamiec zajeta przez zaladowane do struktury dane,
+ * elementy sa usuwany dopoki wskaznik pokazujacy na poczatek  
+ * listy nie bedzie wskazywal na NULL
+ */ 
 	void _Zwolnij();
 
 

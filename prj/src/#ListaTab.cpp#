@@ -35,7 +35,6 @@ int ListaTab::_Pop(unsigned int Pozycja)
        _L = Temp;
     }
   --_RozmiarL;
-  return 0;
 }
 //***********************************************************************
 void ListaTab::_Push(int k,unsigned int Pozycja)

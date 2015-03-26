@@ -22,10 +22,14 @@ using namespace std;
 class Kolejka : public Struktury
 {
 private:
+/*!
+ *\Pole Klasy Kolejka
+ *Pole modelje pojecie wezla,bedacego podstawa dla implementacji struktury danych w rozwinieciu wskaznikowym
+ */
 struct Wezel{
 /*!
  *\brief Pole Wezla
- * Pole bedace wskaznikiem na kolejny element listy
+ * Pole bedace wskaznikiem na kolejny element Kolejki
  */
 	Wezel *_Nast;
 /*!\brief Pole Wezla
@@ -96,6 +100,13 @@ public:
  *\return - Zwraca ilosc elementow w kolejce 
  */
   	unsigned int _Rozmiar(){return _Ilosc;}
+/*!
+ *\brief Metoda zwalniajaca pamiec zajeta przez struktre
+ *
+ * Metoda ma za zadanie zwolnij pamiec zajeta przez zaladowane do struktury dane,
+ * elementy sa usuwany dopoki wskaznik pokazujacy na poczatek  
+ * kolejki nie bedzie wskazywal na NULL
+ */ 
 	void _Zwolnij();
 	
 };

@@ -19,11 +19,15 @@ using namespace std;
  */
 class Stos : public Struktury
 {
+/*!
+ *\Pole Klasy Stos
+ *Pole modelje pojecie wezla,bedacego podstawa dla implementacji struktury danych w rozwinieciu wskaznikowym
+ */
 private:
 struct Wezel{
 /*!
  *\brief Pole Wezla
- * Pole bedace wskaznikiem na kolejny element listy
+ * Pole bedace wskaznikiem na kolejny element stosu
  */
 	Wezel *_Nast;
 /*!\brief Pole Wezla
@@ -55,7 +59,10 @@ public:
 /*!
  *\brief Metda usuwajaca wezel
  *
- *Metoda ma za zadanie zdjac ostatnio dodany element ze stosu danych
+ * Metoda ma za zadanie zdjac ostatnio dodany element ze stosu danych oraz zwrocic 
+ * przechowywana wartosc
+ *\return
+ * Zwraca ostatnia dodana wartosc 
  */
   	int _Pop(unsigned int Pozycja = 0);
 /*!
@@ -89,6 +96,13 @@ public:
  * znajdujace sie na Stosie
  */
 	void _Pokaz();	
+/*!
+ *\brief Metoda zwalniajaca pamiec zajeta przez struktre
+ *
+ * Metoda ma za zadanie zwolnij pamiec zajeta przez zaladowane do struktury dane,
+ * elementy sa usuwany dopoki wskaznik pokazujacy na poczatek  
+ * kolejki nie bedzie wskazywal na NULL
+ */
 	void _Zwolnij();
 	
 };

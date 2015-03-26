@@ -8,7 +8,7 @@ using namespace std;
 
 void Lista::_Zwolnij()
 {
-  cout << "zwalniam" << endl;
+  // cout << "zwalniam" << endl;
   Wezel * Temp = Glowa;
   for(unsigned int i= 1; i < _Ilosc-1; ++i)
     {
@@ -21,7 +21,7 @@ void Lista::_Zwolnij()
 //*************************************************************************
 int Lista::_Pop(unsigned int Pozycja) 
 {
- 
+  //Pozycja = _Ilosc;
   Wezel* Temp = Glowa; 
   Wezel * Temp2;
   if(Pozycja == 1)
@@ -54,21 +54,11 @@ int Lista::_Pop(unsigned int Pozycja)
 
    --_Ilosc;
 }
-/*
-void Lista::_Push(int Wart,unsigned int Poz) 
-{
-  if(Poz <0 || Poz >_Ilosc)
-    {
-      cerr < "Bledna pozycja do usuniecia" << endl;
-    }
-  else if(Glowa == NULL){
-    Wezel * Temp = new Wezel;
-    Temp ->_Wart = Wart;
-*/
-//**************************************************************************
 
+//**************************************************************************
 void Lista::_Push(int Wart,unsigned int Poz) 
 { 
+  //Poz = _Ilosc + 1;
   Wezel *Nowy = new Wezel; 
   Wezel *Stary; 
   Wezel *Temp = Glowa; 
@@ -114,27 +104,6 @@ void Lista::_Pokaz()
 //*************************************************************************
 
 //*************************************************************************
-/*
-void Lista::_Push(int a,unsigned int Pozycja)
-{
-  Wezel *Temp = new Wezel;
-  Temp -> _Nast = Glowa;
-  Temp -> _Wartosc = a;
-  Glowa = Temp;
-  ++_Ilosc;
-}
 
-int Lista::_Pop(unsigned int Pozycja)
-{
-   Wezel * Temp = Glowa;
-    if(Temp)
-      {
-	  Glowa = Temp -> _Nast;
-	  delete Temp;
-      }
-      --_Ilosc;
-  
-}
-   
 
-*/
+

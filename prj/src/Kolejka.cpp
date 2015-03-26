@@ -5,7 +5,7 @@
  */
 void Kolejka::_Zwolnij()
 {
-  cout << "zwalniam";
+  // cout << "zwalniam";
   Wezel * Temp = _Pierwszy;
   for(unsigned int i= 1; i < _Ilosc-1; ++i)
     {
