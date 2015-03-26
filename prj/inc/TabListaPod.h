@@ -18,7 +18,7 @@ private:
  *
  *Pole zawiera wskaznik na typ calkowity, sluzy do alokacji pamieci na dynamiczna tablice
  */
-	int * _L;
+	int *_L;
 /*!
  *\brief Pole Klasy ListaTab
  *
@@ -32,6 +32,10 @@ private:
  */
 	unsigned int _RozmiarT;	
 public:
+
+	void Zamien(int i, int j);
+	void QSort(int lewy, int prawy);
+
 /*!
  *\brief Konstruktor Kopiujacy
  */
@@ -99,6 +103,7 @@ public:
 	void _Zwolnij();
 
 	void _XRozszerz(const double Ile,unsigned int Pozycja, int k=0);
+
 	
 };
 #endif

@@ -52,7 +52,6 @@ void TabListaPod::_Pokaz()
   else{
     for(unsigned int i = 0; i < _RozmiarL; ++i)
       cout << _L[i] << endl;
-    cout << " ";
   }
 }
 //*********************************************************************
@@ -91,7 +90,30 @@ void TabListaPod:: _XRozszerz(const double Ile,unsigned int Pozycja, int k)
       if(i < Pozycja-1){Temp[i] = _L[i];}
       else{Temp[i+1] = _L[i];}
     }
-  delete [] _L;
+  delete[] _L;
   _L = Temp;
 }
 //**********************************************************************
+void TabListaPod::Zamien(int i, int j) {
+  int tymczasowy = _L[i];
+  _L[i] = _L[j];
+  _L[j] = tymczasowy;
+}
+//*********************************************************************
+void TabListaPod::QSort(int lewy, int prawy) {
+  int i, j; 
+  int wartOdniesienia;
+
+  i = (lewy + prawy)/2;
+  wartOdniesienia = _L[i];
+  _L[i] = _L[prawy];
+  for(j = i = lewy; i < prawy; i++) 
+    if(_L[i] < wartOdniesienia) {
+      Zamien(i, j);
+      j++;
+    }
+  _L[prawy] = _L[j]; _L[j] = wartOdniesienia;
+  if(lewy < j - 1) QSort(lewy, j-1);
+  if(j + 1 < prawy) QSort(j + 1, prawy);
+  }
+

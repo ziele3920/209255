@@ -1,11 +1,6 @@
-#include"ListaTab.h"
 #include"TabListaPod.h"
-#include"Lista.h"
-#include"Stos.h"
-#include"Kolejka.h"
-#include"StosTab.h"
 #include"StrukturyBenchmark.h"
-#define ILOSC_DANYCH 100000000
+#define ILOSC_DANYCH 1000000
 
 /*!
  *\file
@@ -13,16 +8,23 @@
  */
 int main(int argc,char *argv[])
 {
-  ListaTab p;
   TabListaPod H;
-  Lista L;
   StrukturyBenchmark K;
-  Stos S;
-  Lista Z;
-  Kolejka k;
-  StosTab B;
 
- 
+  K._Generator("datQ.dat", ILOSC_DANYCH);
+  K.Wczytaj("datQ.dat", ILOSC_DANYCH);
+  K._Ustaw(H);
+  K.WykonajTest(10);
+  /*srand(time(NULL));
+  for(size_t i = 0; i < ILOSC_DANYCH; ++i) 
+    H._Push(rand()%101, H._Rozmiar());
+  H._Pokaz();
+  H.QSort(0, H._Rozmiar());
+  std::cout << std::endl;
+  H._Pokaz();
+  */
+
+  /*
   if(argc < 2)
      {
        cout << "Nieprawidlowe wywolanie programu!"
@@ -86,6 +88,6 @@ int main(int argc,char *argv[])
       K._WykonajTest(atoi(argv[1]));
 
     }
-  
+  */
   return 0;
 }
