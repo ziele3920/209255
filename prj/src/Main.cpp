@@ -1,6 +1,6 @@
 #include"TabListaPod.h"
 #include"StrukturyBenchmark.h"
-#define ILOSC_DANYCH 1000000
+#define ILOSC_DANYCH 100000
 
 /*!
  *\file
@@ -11,10 +11,14 @@ int main(int argc,char *argv[])
   TabListaPod H;
   StrukturyBenchmark K;
 
-  K._Generator("datQ.dat", ILOSC_DANYCH);
-  K.Wczytaj("datQ.dat", ILOSC_DANYCH);
+  //K._Generator("datQSorted.dat", ILOSC_DANYCH);
   K._Ustaw(H);
-  K.WykonajTest(10);
+  //K._Wczytaj("datQ.dat", ILOSC_DANYCH);
+  K._WykonajTest(10);
+  // H._Pokaz();
+
+ 
+
   /*srand(time(NULL));
   for(size_t i = 0; i < ILOSC_DANYCH; ++i) 
     H._Push(rand()%101, H._Rozmiar());

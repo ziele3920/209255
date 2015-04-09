@@ -61,5 +61,9 @@ public:
  */
   virtual void _Zwolnij() = 0;
 
+  virtual void QSort(int lewy, int prawy) = 0;
+
+  virtual void QSortOpt(int lewy, int prawy) = 0;
+
   };
 #endif

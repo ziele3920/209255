@@ -102,18 +102,48 @@ void TabListaPod::Zamien(int i, int j) {
 //*********************************************************************
 void TabListaPod::QSort(int lewy, int prawy) {
   int i, j; 
-  int wartOdniesienia;
-
-  i = (lewy + prawy)/2;
-  wartOdniesienia = _L[i];
-  _L[i] = _L[prawy];
-  for(j = i = lewy; i < prawy; i++) 
-    if(_L[i] < wartOdniesienia) {
+  int pivot = _L[lewy];
+  i = lewy;
+  j = prawy;
+  do {
+    while (_L[i] < pivot) ++i;
+    while (_L[j] > pivot) --j;
+    if (i <= j) {
       Zamien(i, j);
-      j++;
+      ++i; --j;
     }
-  _L[prawy] = _L[j]; _L[j] = wartOdniesienia;
-  if(lewy < j - 1) QSort(lewy, j-1);
-  if(j + 1 < prawy) QSort(j + 1, prawy);
-  }
+  }while (i<=j);
+
+  if (j > lewy) QSort(lewy, j);
+  if (i < prawy) QSort(i, prawy);
+}
+//**********************************************************************
+void TabListaPod::QSortOpt(int lewy, int prawy) {
+  int i, j; 
+  int pivot = _L[MedianaTrzech(lewy, (lewy+prawy)/2, prawy-1)];
+  //cout << pivot << endl;
+  i = lewy;
+  j = prawy;
+  do {
+    while (_L[i] < pivot) ++i;
+    while (_L[j] > pivot) --j;
+    if (i <= j) {
+      Zamien(i, j);
+      ++i; --j;
+    }
+  }while (i<=j);
+
+  if (j > lewy) QSort(lewy, j);
+  if (i < prawy) QSort(i, prawy);
+}
+//**********************************************************************
+int TabListaPod::MedianaTrzech(const int a, const int b, const int c) {
+  if((_L[a] <= _L[b]) && (_L[a] <= _L[c])) 
+    if(_L[b] <= _L[c])  return b; 
+    else return c;
+
+  if((_L[b] <= _L[a]) && (_L[b] <= _L[c])) 
+    if(_L[a] <= _L[c])  return a;
+    else return c;
+}
 

@@ -84,8 +84,8 @@ public:
  *\param[in] n - Ilosc danych ktora zostanie zwolniona
  */ 
 	void _Zwolnij(const unsigned int n);
-	
-	
+
+
 	
 	
 };

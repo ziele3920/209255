@@ -31,10 +31,55 @@ private:
  *Pole przechowuje informacje o obecnycm rozmiarze tablicy danych
  */
 	unsigned int _RozmiarT;	
+
+/*!
+ * \brief
+ * Zamienia miejscami elementy Listy
+ *
+ * Zamienia miejscami elementy Listy o zadanych indeksach
+ *
+ * \param[in] i - pierwszy indeks
+ * \param[in] j - drugi indeks
+ */
+	void Zamien(int i, int j);
+
+/*!
+ * \brief
+ * Znajduje mediane
+ *
+ * Znajduje mediane wartości z trzech podanych elementów Listy
+ *
+ * \param[in] a - indeks pierwszego elementu do liczenia mediany
+ * \param[in] b - indeks drugiego elementu do liczenia mediany
+ * \param[in] c - indeks trzeciego elementu do liczenia mediany
+ *
+ * \retval - zwraca indeks elementu będącego medianą z trzech wartości podanych elementów
+ */
+	int MedianaTrzech(const int a, const int b, const int c);
 public:
 
-	void Zamien(int i, int j);
+/*!
+ * \brief
+ * Szybkie sortowanie
+ *
+ * Realizuje algorytm szybkiego sortowania elementów Listy
+ *
+ * \param[in] lewy - indeks pierwszego elementu tworzącego Listę do posotrowania
+ * \param[in] prawy - indeks ostatniego elementu tworzącego Listę do posotrowania
+ */
 	void QSort(int lewy, int prawy);
+
+/*!
+ * \brief
+ * Zoptymalizowane Szybkie Sortowanie
+ *
+ * Realizuje zoptymalizowany ze względu na wybór pivota algorytm
+ * szybkiego sortowania elementów Listy
+ *
+ * \param[in] lewy - indeks pierwszego elementu tworzącego Listę do posotrowania
+ * \param[in] prawy - indeks ostatniego elementu tworzącego Listę do posotrowania
+ */
+	void QSortOpt(int lewy, int prawy);
 
 /*!
  *\brief Konstruktor Kopiujacy

@@ -67,6 +67,7 @@ public:
  *\param[in] n - liczba danych ktora bedzie zwolniona z pamieci
  */
 	virtual void _Zwolnij(const unsigned int n) = 0;
+
 };
 
 #endif

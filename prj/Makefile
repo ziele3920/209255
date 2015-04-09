@@ -5,7 +5,7 @@ CPPFLAGS= -c -g -Iinc -Wall -pedantic -std=c++11
 
 
 Struktury:obj/TabListaPod.o obj/Lista.o obj/StosTab.o obj/Stos.o obj/Kolejka.o obj/StrukturyBenchmark.o obj/BenchmarkInterfejs.o obj/ListaTab.o obj/Main.o
-	g++ -Wall -pedantic -o Struktury obj/*.o
+	g++ -g3 -Wall -pedantic -o Struktury obj/*.o
 
 obj/Main.o: src/Main.cpp inc/*.h
 	g++ ${CPPFLAGS} -o obj/Main.o src/Main.cpp
