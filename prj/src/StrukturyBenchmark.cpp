@@ -19,7 +19,9 @@ void StrukturyBenchmark::_Przydziel(const unsigned int n)
 //*****************************************************************************
 void StrukturyBenchmark::_Test(const unsigned int n)
 {
-  S -> QSortOpt(0, (S -> _Rozmiar()-1));
+
+  S -> MergeSort(0, (S -> _Rozmiar()-1));
+;
 }
 //*****************************************************************************
 void StrukturyBenchmark:: _Wczytaj(string PlikIn,const unsigned int Ilosc)

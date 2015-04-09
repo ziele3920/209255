@@ -100,7 +100,7 @@ void TabListaPod::Zamien(int i, int j) {
   _L[j] = tymczasowy;
 }
 //*********************************************************************
-void TabListaPod::QSort(int lewy, int prawy) {
+void TabListaPod::QSort(const int lewy, const int prawy) {
   int i, j; 
   int pivot = _L[lewy];
   i = lewy;
@@ -118,7 +118,7 @@ void TabListaPod::QSort(int lewy, int prawy) {
   if (i < prawy) QSort(i, prawy);
 }
 //**********************************************************************
-void TabListaPod::QSortOpt(int lewy, int prawy) {
+void TabListaPod::QSortOpt(const int lewy, const int prawy) {
   int i, j; 
   int pivot = _L[MedianaTrzech(lewy, (lewy+prawy)/2, prawy-1)];
   //cout << pivot << endl;
@@ -137,7 +137,7 @@ void TabListaPod::QSortOpt(int lewy, int prawy) {
   if (i < prawy) QSort(i, prawy);
 }
 //**********************************************************************
-int TabListaPod::MedianaTrzech(const int a, const int b, const int c) {
+int TabListaPod::MedianaTrzech(const int a, const int b, const int c) const {
   if((_L[a] <= _L[b]) && (_L[a] <= _L[c])) 
     if(_L[b] <= _L[c])  return b; 
     else return c;
@@ -145,5 +145,32 @@ int TabListaPod::MedianaTrzech(const int a, const int b, const int c) {
   if((_L[b] <= _L[a]) && (_L[b] <= _L[c])) 
     if(_L[a] <= _L[c])  return a;
     else return c;
+}
+//**********************************************************************
+void TabListaPod::MergeSort(const int lewy, const int prawy) {
+  if(prawy <= lewy) return;
+  int srodek = (prawy+lewy)/2;
+
+  MergeSort(lewy, srodek);
+  MergeSort(srodek+1, prawy);
+
+  Scal(lewy, srodek, prawy);
+}
+//**********************************************************************
+void TabListaPod::Scal(const int lewy, const int srodek, const int prawy) {
+  int i, j;
+  int *pom = new int[_RozmiarL];
+  for(i = srodek+1; i>lewy; --i)
+    pom[i-1] = _L[i-1];
+
+  for(j = srodek; j<prawy; ++j)
+    pom[prawy+srodek-j] = _L[j+1];
+
+  for(int k = lewy; k<=prawy; ++k) 
+    if(pom[j] < pom[i])
+      _L[k]=pom[j--];
+    else
+      _L[k]=pom[i++];
+  delete[] pom;
 }
 

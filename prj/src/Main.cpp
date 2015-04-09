@@ -15,7 +15,7 @@ int main(int argc,char *argv[])
   K._Ustaw(H);
   //K._Wczytaj("datQ.dat", ILOSC_DANYCH);
   K._WykonajTest(10);
-  // H._Pokaz();
+   H._Pokaz();
 
  
 

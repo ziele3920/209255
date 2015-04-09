@@ -55,7 +55,19 @@ private:
  *
  * \retval - zwraca indeks elementu będącego medianą z trzech wartości podanych elementów
  */
-	int MedianaTrzech(const int a, const int b, const int c);
+	int MedianaTrzech(const int a, const int b, const int c) const;
+
+/*!
+ * \brief
+ * "Scala" Listę
+ *
+ * "Scala" listę w posortowaną całość.
+ *
+ * \param[in] lewy - indeks lewej krawędzi listy
+ * \param[in] srodek - indeks środkowego elementu listy
+ * \param[in] prawy - indekst prawej krawędzi listy
+ */
+	void Scal(const int lewy, const  int srodek, const int prawy); 
 public:
 
 /*!
@@ -67,7 +79,7 @@ public:
  * \param[in] lewy - indeks pierwszego elementu tworzącego Listę do posotrowania
  * \param[in] prawy - indeks ostatniego elementu tworzącego Listę do posotrowania
  */
-	void QSort(int lewy, int prawy);
+	void QSort(const int lewy, const int prawy);
 
 /*!
  * \brief
@@ -79,7 +91,20 @@ public:
  * \param[in] lewy - indeks pierwszego elementu tworzącego Listę do posotrowania
  * \param[in] prawy - indeks ostatniego elementu tworzącego Listę do posotrowania
  */
-	void QSortOpt(int lewy, int prawy);
+	void QSortOpt(const int lewy, const int prawy);
+
+/*!
+ * \brief
+ * Sortowanie przez scalanie
+ *
+ * Realizuje algorytm sortowania przez scalanie
+ *
+ * \param[in] lewy - lewa krawędź Listy
+ * \param[in] prawy - prawa krawędź Listy
+ * \param[in] pom - wkaźnik na tablicę pomocniczą, musi być wielkosci
+ * conajmniej takiej jak ilośc lementów do posortowania
+ */
+	void MergeSort(const int lewy, const int prawy);
 
 /*!
  *\brief Konstruktor Kopiujacy

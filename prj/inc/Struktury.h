@@ -61,9 +61,42 @@ public:
  */
   virtual void _Zwolnij() = 0;
 
-  virtual void QSort(int lewy, int prawy) = 0;
+/*!
+ * \brief
+ * Szybkie sortowanie
+ *
+ * Realizuje algorytm szybkiego sortowania elementów Struktury
+ *
+ * \param[in] lewy - indeks pierwszego elementu tworzącego Strukturę do posotrowania
+ * \param[in] prawy - indeks ostatniego elementu tworzącego Strukturę do posotrowania
+ */
+  virtual void QSort(const int lewy, const int prawy) = 0;
 
-  virtual void QSortOpt(int lewy, int prawy) = 0;
+/*!
+ * \brief
+ * Zoptymalizowane Szybkie Sortowanie
+ *
+ * Realizuje zoptymalizowany ze względu na wybór pivota algorytm
+ * szybkiego sortowania elementów Struktury
+ *
+ * \param[in] lewy - indeks pierwszego elementu tworzącego Strunkturę do posotrowania
+ * \param[in] prawy - indeks ostatniego elementu tworzącego Strukturę do posotrowania
+ */
+  virtual void QSortOpt(const int lewy, const int prawy) = 0;
+
+/*!
+ * \brief
+ * Sortowanie przez scalanie
+ *
+ * Realizuje algorytm sortowania przez scalanie
+ *
+ * \param[in] lewy - lewa krawędź Struktury
+ * \param[in] prawy - prawa krawędź Struktury
+ * \param[in] pom - wkaźnik na tablicę pomocniczą, musi być wielkosci
+ * conajmniej takiej jak ilośc lementów do posortowania
+ */
+  virtual void MergeSort(const int lewy, const int prawy) = 0;
+
 
   };
 #endif
