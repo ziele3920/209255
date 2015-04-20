@@ -20,7 +20,7 @@ void StrukturyBenchmark::_Przydziel(const unsigned int n)
 void StrukturyBenchmark::_Test(const unsigned int n)
 {
 
-  S -> MergeSort(0, (S -> _Rozmiar()-1));
+  S -> QSortOpt(0, (S -> _Rozmiar()-1));
 ;
 }
 //*****************************************************************************

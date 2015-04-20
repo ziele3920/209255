@@ -18,7 +18,7 @@ void BenchmarkInterfejs:: _WykonajTest(const unsigned int Ilosc_Pow)
      cout << "Pracuje nad " << Tablica_Rozmiarow[i] << " Danych : " << endl;
       for(unsigned int j = 0; j < Ilosc_Pow; ++j)
        {
-	 _Wczytaj("datQ.dat", Tablica_Rozmiarow[i]);
+	 _Wczytaj("datQSorted.dat", Tablica_Rozmiarow[i]);
 	 clock_t Start = clock();
 	 this-> _Test(Tablica_Rozmiarow[i]);
 	 clock_t Koniec = clock();

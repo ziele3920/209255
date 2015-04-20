@@ -133,8 +133,8 @@ void TabListaPod::QSortOpt(const int lewy, const int prawy) {
     }
   }while (i<=j);
 
-  if (j > lewy) QSort(lewy, j);
-  if (i < prawy) QSort(i, prawy);
+  if (j > lewy) QSortOpt(lewy, j);
+  if (i < prawy) QSortOpt(i, prawy);
 }
 //**********************************************************************
 int TabListaPod::MedianaTrzech(const int a, const int b, const int c) const {
